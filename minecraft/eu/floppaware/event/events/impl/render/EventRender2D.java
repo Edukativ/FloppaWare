@@ -5,8 +5,8 @@ import net.minecraft.client.gui.ScaledResolution;
 
 public class EventRender2D implements Event {
 
-    private float partialTicks;
     private final ScaledResolution sr;
+    private float partialTicks;
 
     public EventRender2D(float partialTicks, ScaledResolution sr) {
         this.partialTicks = partialTicks;

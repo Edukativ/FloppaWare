@@ -7,11 +7,11 @@ import net.minecraft.client.Minecraft;
 public class Feature extends Configurable {
 
     protected static Minecraft mc = Minecraft.getMinecraft();
+    private final Category category;
     private String label;
     private int key;
-    private final Category category;
     private boolean state;
-    private boolean hidden;
+    public boolean hidden;
 
     public Feature(String label, Category category) {
         this.label = label;

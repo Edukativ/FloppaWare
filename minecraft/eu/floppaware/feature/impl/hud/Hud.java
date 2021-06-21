@@ -17,15 +17,17 @@ public class Hud extends Feature {
 
     @EventTarget
     public void onRender2D(EventRender2D event) {
-        mc.fontRendererObj.drawStringWithShadow(Main.name, 4, 4, -1);//r нажми
-
-        int y = (int) 15.5;
+        int width = mc.fontRendererObj.getStringWidth(Main.name) + 5;
+        int height = mc.fontRendererObj.FONT_HEIGHT;
+        Gui.drawRect(3, 3, width, (int) (height * 1.5), Integer.MIN_VALUE);
+        mc.fontRendererObj.drawStringWithShadow(Main.name, 4, 4, -1);
+        int y = 16;
 
         for (Feature feature : Main.instance.featureManager.getFeatureList()) {
             if (feature.getState() && !feature.isHidden()) {
                 Gui.drawRect(0, y, mc.fontRendererObj.getStringWidth(feature.getLabel()) + 4, y + 9, Integer.MIN_VALUE);
                 Gui.drawRect(1, 16, 0, y + 9, -1);
-                mc.fontRendererObj.drawStringWithShadow(feature.getLabel(), 2, y, -1);
+                mc.fontRendererObj.drawStringWithShadow(feature.getLabel(), 2, y + 0.5F, -1);
             }
             y += 9;
         }
