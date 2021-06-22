@@ -9,7 +9,7 @@ import eu.floppaware.utils.MoveUtils;
 public class AutoSprint extends Feature {
 
     public AutoSprint() {
-        super("AutoSprint", Category.Movement);
+        super("autosprint", Category.Movement);
     }
 
     @EventTarget

@@ -217,22 +217,22 @@ public class GuiMainMenu extends GuiScreen
     {
         this.viewportTexture = new DynamicTexture(256, 256);
         this.backgroundTexture = this.mc.getTextureManager().getDynamicTextureLocation("background", this.viewportTexture);
-        this.field_193978_M = this.fontRendererObj.getStringWidth("Copyright Mojang AB. Do not distribute!");
+        this.field_193978_M = this.fontRendererObj.getStringWidth("Copyright FloppaWare. Do not distribute!");
         this.field_193979_N = this.width - this.field_193978_M - 2;
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
 
         if (calendar.get(2) + 1 == 12 && calendar.get(5) == 24)
         {
-            this.splashText = "Merry X-mas!";
+            this.splashText = "Mu1trazer";
         }
         else if (calendar.get(2) + 1 == 1 && calendar.get(5) == 1)
         {
-            this.splashText = "Happy new year!";
+            this.splashText = "MyLifeIsShit";
         }
         else if (calendar.get(2) + 1 == 10 && calendar.get(5) == 31)
         {
-            this.splashText = "OOoooOOOoooo! Spooky!";
+            this.splashText = "Edukativ";
         }
 
         int i = 24;
@@ -247,9 +247,9 @@ public class GuiMainMenu extends GuiScreen
             this.addSingleplayerMultiplayerButtons(j, 24);
         }
 
-        this.buttonList.add(new GuiButton(0, this.width / 2 - 100, j + 72 + 12, 98, 20, I18n.format("menu.options")));
-        this.buttonList.add(new GuiButton(4, this.width / 2 + 2, j + 72 + 12, 98, 20, I18n.format("menu.quit")));
-        this.buttonList.add(new GuiButtonLanguage(5, this.width / 2 - 124, j + 72 + 12));
+        this.buttonList.add(new GuiButton(0, this.width / 8 - 100, j + 72 + 12, 90, 21, I18n.format("menu.options")));
+        this.buttonList.add(new GuiButton(4, this.width / 4 - 110, j + 72 + 12, 90, 21, I18n.format("menu.quit")));
+        this.buttonList.add(new GuiButtonLanguage(5, this.width / 4 - 130, j + 72 + 12));
 
         synchronized (this.threadLock)
         {
@@ -288,17 +288,17 @@ public class GuiMainMenu extends GuiScreen
      */
     private void addSingleplayerMultiplayerButtons(int p_73969_1_, int p_73969_2_)
     {
-        this.buttonList.add(new GuiButton(1, this.width / 2 - 100, p_73969_1_, I18n.format("menu.singleplayer")));
-        this.buttonList.add(new GuiButton(2, this.width / 2 - 100, p_73969_1_ + p_73969_2_ * 1, I18n.format("menu.multiplayer")));
+        this.buttonList.add(new GuiButton(1, this.width / 8 - 100, p_73969_1_, I18n.format("menu.singleplayer")));
+        this.buttonList.add(new GuiButton(2, this.width / 8 - 100, p_73969_1_ + p_73969_2_ * 1, I18n.format("menu.multiplayer")));
 
         if (Reflector.GuiModList_Constructor.exists())
         {
             this.realmsButton = this.addButton(new GuiButton(14, this.width / 2 + 2, p_73969_1_ + p_73969_2_ * 2, 98, 20, I18n.format("menu.online").replace("Minecraft", "").trim()));
-            this.buttonList.add(this.modButton = new GuiButton(6, this.width / 2 - 100, p_73969_1_ + p_73969_2_ * 2, 98, 20, I18n.format("fml.menu.mods")));
+            this.buttonList.add(this.modButton = new GuiButton(6, this.width / 8 - 100, p_73969_1_ + p_73969_2_ * 2, 98, 20, I18n.format("fml.menu.mods")));
         }
         else
         {
-            this.realmsButton = this.addButton(new GuiButton(14, this.width / 2 - 100, p_73969_1_ + p_73969_2_ * 2, I18n.format("menu.online")));
+            this.realmsButton = this.addButton(new GuiButton(14, this.width / 8 - 100, p_73969_1_ + p_73969_2_ * 2, I18n.format("menu.online")));
         }
     }
 
@@ -669,7 +669,7 @@ public class GuiMainMenu extends GuiScreen
         GlStateManager.scale(f, f, f);
         this.drawCenteredString(this.fontRendererObj, this.splashText, 0, -8, -256);
         GlStateManager.popMatrix();
-        String s = "Minecraft 1.12.2";
+        String s = "Made with love from Mu1trazer and Edukativ.";
 
         if (this.mc.isDemo())
         {
@@ -700,7 +700,7 @@ public class GuiMainMenu extends GuiScreen
             this.drawString(this.fontRendererObj, s, 2, this.height - 10, -1);
         }
 
-        this.drawString(this.fontRendererObj, "Copyright Mojang AB. Do not distribute!", this.field_193979_N, this.height - 10, -1);
+        this.drawString(this.fontRendererObj, "Welcome, Developer! version: 0.0.3", this.field_193979_N, this.height - 10, -1);
 
         if (mouseX > this.field_193979_N && mouseX < this.field_193979_N + this.field_193978_M && mouseY > this.height - 10 && mouseY < this.height && Mouse.isInsideWindow())
         {

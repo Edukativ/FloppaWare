@@ -11,7 +11,7 @@ import org.lwjgl.input.Keyboard;
 public class Hud extends Feature {
 
     public Hud() {
-        super("Hud", Category.Hud);
+        super("hud", Category.Hud);
         setKey(Keyboard.KEY_R);
     }
 

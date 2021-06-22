@@ -13,14 +13,14 @@ public class ClickGui extends GuiScreen {
 
 	public static ArrayList<Frame> frames = new ArrayList<>();
 	public static int color = -1;
-	
+
 	public ClickGui() {
 		int frameX = 5;
 		for(Category category : Category.values()) {
 			Frame frame = new Frame(category);
 			frame.setX(frameX);
 			frames.add(frame);
-			frameX += frame.getWidth() + 1;
+			frameX += frame.getWidth() + 3;
 		}
 	}
 	
