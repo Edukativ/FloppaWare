@@ -47,20 +47,20 @@ public class Gui
     /**
      * Draws a solid color rectangle with the specified coordinates and color.
      */
-    public static void drawRect(int left, int top, int right, int bottom, int color)
+    public static void drawRect(int left, float g, double d, double e, int color)
     {
-        if (left < right)
+        if (left < d)
         {
             int i = left;
-            left = right;
-            right = i;
+            left = (int) d;
+            d = i;
         }
 
-        if (top < bottom)
+        if (g < e)
         {
-            int j = top;
-            top = bottom;
-            bottom = j;
+            int j = (int) g;
+            g = (float) e;
+            e = j;
         }
 
         float f3 = (float)(color >> 24 & 255) / 255.0F;
@@ -74,10 +74,10 @@ public class Gui
         GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
         GlStateManager.color(f, f1, f2, f3);
         bufferbuilder.begin(7, DefaultVertexFormats.POSITION);
-        bufferbuilder.pos((double)left, (double)bottom, 0.0D).endVertex();
-        bufferbuilder.pos((double)right, (double)bottom, 0.0D).endVertex();
-        bufferbuilder.pos((double)right, (double)top, 0.0D).endVertex();
-        bufferbuilder.pos((double)left, (double)top, 0.0D).endVertex();
+        bufferbuilder.pos((double)left, (double)e, 0.0D).endVertex();
+        bufferbuilder.pos((double)d, (double)e, 0.0D).endVertex();
+        bufferbuilder.pos((double)d, (double)g, 0.0D).endVertex();
+        bufferbuilder.pos((double)left, (double)g, 0.0D).endVertex();
         tessellator.draw();
         GlStateManager.enableTexture2D();
         GlStateManager.disableBlend();

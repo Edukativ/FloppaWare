@@ -9,9 +9,9 @@ import net.minecraft.network.play.INetHandlerPlayClient;
 public class SPacketEntityVelocity implements Packet<INetHandlerPlayClient>
 {
     private int entityID;
-    private int motionX;
-    private int motionY;
-    private int motionZ;
+    public static int motionX;
+    public static int motionY;
+    public static int motionZ;
 
     public SPacketEntityVelocity()
     {

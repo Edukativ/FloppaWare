@@ -12,6 +12,10 @@ public class Feature extends Configurable {
     private int key;
     private boolean state;
     public boolean hidden;
+    
+    public static boolean check() {
+        return mc.player == null || mc.world == null;
+    }
 
     public Feature(String label, Category category) {
         this.label = label;
