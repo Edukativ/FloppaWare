@@ -10,7 +10,7 @@ import eu.floppaware.ui.click.ClickGui;
 
 public class Main {
 
-    public static String name = "FloppaWare", build = "010", status = "Alpha+";
+    public static String name = "FloppaWare", build = "015", status = "Alpha+";
 
     public static Main instance = new Main();
     public FeatureManager featureManager;

@@ -228,7 +228,7 @@ public class GuiMainMenu extends GuiScreen
         }
         else if (calendar.get(2) + 1 == 1 && calendar.get(5) == 1)
         {
-            this.splashText = "MyLifeIsShit";
+            this.splashText = "Basic";
         }
         else if (calendar.get(2) + 1 == 10 && calendar.get(5) == 31)
         {
@@ -669,7 +669,7 @@ public class GuiMainMenu extends GuiScreen
         GlStateManager.scale(f, f, f);
         this.drawCenteredString(this.fontRendererObj, this.splashText, 0, -8, -256);
         GlStateManager.popMatrix();
-        String s = "Made with love from Mu1trazer and Edukativ.";
+        String s = "Made with love from Mu1trazer.";
 
         if (this.mc.isDemo())
         {
@@ -700,7 +700,7 @@ public class GuiMainMenu extends GuiScreen
             this.drawString(this.fontRendererObj, s, 2, this.height - 10, -1);
         }
 
-        this.drawString(this.fontRendererObj, "Welcome, Developer! version: 0.0.3", this.field_193979_N, this.height - 10, -1);
+        this.drawString(this.fontRendererObj, "Welcome, Developer! Dev-BUILD: 0.1.5", this.field_193979_N, this.height - 10, -1);
 
         if (mouseX > this.field_193979_N && mouseX < this.field_193979_N + this.field_193978_M && mouseY > this.height - 10 && mouseY < this.height && Mouse.isInsideWindow())
         {
