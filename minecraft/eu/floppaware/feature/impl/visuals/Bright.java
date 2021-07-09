@@ -13,21 +13,22 @@ import net.minecraft.potion.PotionEffect;
 
 public class Bright extends Feature {
 
-	public ListSetting mode;
-	
-	public Bright() {
-		super("Bright+", Category.Visuals);
-		mode = new ListSetting("Bright mode", "Gamma", "Gamma", "Potion");
-        addSettings(mode);
-	}
+	 public ListSetting mode;
 
-	public void onUpdate(EventUpdate event) {
+    public Bright() {
+        super("Bright+", Category.Visuals);
+        mode = new ListSetting("Bright Mode", "Gamma", "Gamma", "Potion");
+        addSettings(mode);
+    }
+
+    @EventTarget
+    public void OnUpdate(EventUpdate event) {
         if (getState()) {
-            if (mode.activeMode.equals("Gamma")) {
+            if (mode.activeMode == "Gamma") {
                 mc.player.removePotionEffect(Potion.getPotionById(16));
                 mc.gameSettings.gammaSetting = 1000.0f;
             }
-            if (mode.activeMode.equals("Potion")) {
+            if (mode.activeMode == "Potion") {
                 mc.player.addPotionEffect(new PotionEffect(Potion.getPotionById(16), 817, 1));
                 mc.gameSettings.gammaSetting = 0.1f;
             }
@@ -38,6 +39,5 @@ public class Bright extends Feature {
     public void onDisable() {
         super.onDisable();
         mc.gameSettings.gammaSetting = 0.1f;
-        mc.player.removePotionEffect(Potion.getPotionById(16));
     }
 }

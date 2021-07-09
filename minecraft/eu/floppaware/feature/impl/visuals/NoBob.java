@@ -21,8 +21,11 @@ public class NoBob extends Feature {
 
     @EventTarget
     public void onUpdate(EventUpdate event) {
-        boolean old = mc.gameSettings.viewBobbing;
-        mc.gameSettings.viewBobbing = false;
-        mc.gameSettings.viewBobbing = old;
+        if(getState()) {
+            mc.gameSettings.viewBobbing = false;
+        }
+        else {
+            mc.gameSettings.viewBobbing = true;
+        }
     }
 }
