@@ -17,7 +17,7 @@ public class Bright extends Feature {
 	
 	public Bright() {
 		super("Bright+", Category.Visuals);
-		mode = new ListSetting("Bright Mode", "Gamma", "Gamma", "Potion");
+		mode = new ListSetting("Bright mode", "Gamma", "Gamma", "Potion");
         addSettings(mode);
 	}
 

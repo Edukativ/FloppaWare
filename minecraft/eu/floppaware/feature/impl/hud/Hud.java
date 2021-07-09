@@ -11,16 +11,15 @@ import org.lwjgl.input.Keyboard;
 public class Hud extends Feature {
 
     public Hud() {
-        super("hud", Category.Hud);
+        super("Hud", Category.Hud);
         setKey(Keyboard.KEY_R);
     }
 
     @EventTarget
     public void onRender2D(EventRender2D event) {
-        int width = mc.fontRendererObj.getStringWidth(Main.name) + 5;
+        int width = mc.fontRendererObj.getStringWidth(Main.name) + 7;
         int height = mc.fontRendererObj.FONT_HEIGHT;
-        Gui.drawRect(3, 3, width, (int) (height * 1.5), Integer.MIN_VALUE);
-        mc.fontRendererObj.drawStringWithShadow(Main.name, 4, 4, -1);
+        mc.fontRendererObj.drawStringWithShadow(Main.name, 2, 2, -16);
         int y = 16;
 
         for (Feature feature : Main.instance.featureManager.getFeatureList()) {

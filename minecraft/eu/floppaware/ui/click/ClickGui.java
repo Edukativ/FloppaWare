@@ -12,7 +12,7 @@ import eu.floppaware.ui.click.component.Frame;
 public class ClickGui extends GuiScreen {
 
 	public static ArrayList<Frame> frames = new ArrayList<>();
-	public static int color = -1;
+	public static int color = -256;
 
 	public ClickGui() {
 		int frameX = 5;
@@ -20,7 +20,7 @@ public class ClickGui extends GuiScreen {
 			Frame frame = new Frame(category);
 			frame.setX(frameX);
 			frames.add(frame);
-			frameX += frame.getWidth() + 3;
+			frameX += frame.getWidth() + 5;
 		}
 	}
 	

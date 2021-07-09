@@ -17,33 +17,42 @@ public class FeatureManager {
     public FeatureManager() {
         
     	//Combat
+        featureList.add(new FastBow());
     	featureList.add(new TriggerBot());
     	featureList.add(new PushAttack());
 //    	featureList.add(new Velocity());
     	
     	//Movement
-    	featureList.add(new NoJumpDelay());
+        featureList.add(new InventoryWalk());
+        featureList.add(new NoJumpDelay());
+        featureList.add(new AirJump());
     	featureList.add(new AutoSprint());
+        featureList.add(new ElytraFly());
+        featureList.add(new LongJump());
+    	featureList.add(new Parkour());
+
+
     	
         
     	//Player
         featureList.add(new FastPlace());
-        featureList.add(new Parkour());
         featureList.add(new NoPush());
         featureList.add(new NoWeb());
+        featureList.add(new AutoWalk());
+        //featureList.add(new XCarry());
         
     	
     	//Visuals
+        featureList.add(new AntiRain());
         featureList.add(new ShaderESP());
         featureList.add(new Bright());
+        featureList.add(new NoBob());
     	
         
     	//Misc
-        featureList.add(new ElytraFly());
-        featureList.add(new AntiRain());
-//        featureList.add(new Timer());
-    	
-        
+
+
+
     	//Hud
     	featureList.add(new Hud());
         featureList.add(new ClickGui());

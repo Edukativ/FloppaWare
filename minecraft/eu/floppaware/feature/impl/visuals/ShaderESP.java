@@ -11,7 +11,7 @@ import net.minecraft.entity.player.EntityPlayer;
 public class ShaderESP extends Feature {
 
 	public ShaderESP() {
-		super("ShaderESP", Category.Movement);
+		super("ShaderESP", Category.Visuals);
 	}
 
 	@EventTarget
