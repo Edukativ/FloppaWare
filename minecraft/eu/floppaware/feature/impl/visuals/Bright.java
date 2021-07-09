@@ -23,11 +23,11 @@ public class Bright extends Feature {
 
 	public void onUpdate(EventUpdate event) {
         if (getState()) {
-            if (mode.activeMode == "Gamma") {
+            if (mode.activeMode.equals("Gamma")) {
                 mc.player.removePotionEffect(Potion.getPotionById(16));
                 mc.gameSettings.gammaSetting = 1000.0f;
             }
-            if (mode.activeMode == "Potion") {
+            if (mode.activeMode.equals("Potion")) {
                 mc.player.addPotionEffect(new PotionEffect(Potion.getPotionById(16), 817, 1));
                 mc.gameSettings.gammaSetting = 0.1f;
             }
@@ -40,5 +40,4 @@ public class Bright extends Feature {
         mc.gameSettings.gammaSetting = 0.1f;
         mc.player.removePotionEffect(Potion.getPotionById(16));
     }
-
 }

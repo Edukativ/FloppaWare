@@ -6,6 +6,7 @@ import eu.floppaware.feature.impl.combat.*;
 import eu.floppaware.feature.impl.player.*;
 import eu.floppaware.feature.impl.visuals.*;
 import eu.floppaware.feature.impl.misc.*;
+import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,11 +18,13 @@ public class FeatureManager {
     public FeatureManager() {
         
     	//Combat
-        featureList.add(new FastBow());
+
+        featureList.add(new AutoGapple());
     	featureList.add(new TriggerBot());
     	featureList.add(new PushAttack());
-//    	featureList.add(new Velocity());
-    	
+        featureList.add(new FastBow());
+
+
     	//Movement
         featureList.add(new InventoryWalk());
         featureList.add(new NoJumpDelay());
@@ -31,8 +34,6 @@ public class FeatureManager {
         featureList.add(new LongJump());
     	featureList.add(new Parkour());
 
-
-    	
         
     	//Player
         featureList.add(new FastPlace());
@@ -43,20 +44,23 @@ public class FeatureManager {
         
     	
     	//Visuals
-        featureList.add(new AntiRain());
         featureList.add(new ShaderESP());
+        featureList.add(new AntiRain());
         featureList.add(new Bright());
         featureList.add(new NoBob());
+        featureList.add(new ESP());
     	
         
     	//Misc
-
+        featureList.add(new MCFriends());
 
 
     	//Hud
     	featureList.add(new Hud());
         featureList.add(new ClickGui());
-        
+        this.featureList.sort((m1, m2) -> (int) (Minecraft.getMinecraft().fontRendererObj.getStringWidth(m2.getLabel()) - Minecraft.getMinecraft().fontRendererObj.getStringWidth(m1.getLabel())));
+
+
     }
 
     public List<Feature> getFeatureList() {

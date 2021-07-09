@@ -13,17 +13,10 @@ public class NoWeb extends Feature {
 		super("NoWeb", Category.Player);
 	}
 
-	@Override
-	public void onDisable() {
-		mc.player.isInWeb = true;
-		super.onDisable();
-
-	}
 
 	@EventTarget
 	public void onLocalPlayerUpdate(EventUpdate e) {
 		mc.player.isInWeb = false;
-		super.onEnable();
 	}
 
 }

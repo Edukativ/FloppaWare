@@ -1,5 +1,9 @@
 package eu.floppaware.utils.render;
 
+import net.minecraft.client.renderer.BufferBuilder;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.Tessellator;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.Minecraft;
@@ -48,5 +52,64 @@ public class RenderUtil {
         Entity current = Minecraft.getMinecraft().getRenderViewEntity();
         frustrum.setPosition(current.posX, current.posY, current.posZ);
         return frustrum.isBoundingBoxInFrustum(bb);
+    }
+
+    public static void cfb(final BufferBuilder builder, final double x1, final double y1, final double z1, final double x2, final double y2, final double z2, final float red, final float green, final float blue, final float alpha) {
+        builder.pos(x1, y1, z1).color(red, green, blue, alpha).endVertex();
+        builder.pos(x1, y1, z1).color(red, green, blue, alpha).endVertex();
+        builder.pos(x1, y1, z1).color(red, green, blue, alpha).endVertex();
+        builder.pos(x1, y1, z2).color(red, green, blue, alpha).endVertex();
+        builder.pos(x1, y2, z1).color(red, green, blue, alpha).endVertex();
+        builder.pos(x1, y2, z2).color(red, green, blue, alpha).endVertex();
+        builder.pos(x1, y2, z2).color(red, green, blue, alpha).endVertex();
+        builder.pos(x1, y1, z2).color(red, green, blue, alpha).endVertex();
+        builder.pos(x2, y2, z2).color(red, green, blue, alpha).endVertex();
+        builder.pos(x2, y1, z2).color(red, green, blue, alpha).endVertex();
+        builder.pos(x2, y1, z2).color(red, green, blue, alpha).endVertex();
+        builder.pos(x2, y1, z1).color(red, green, blue, alpha).endVertex();
+        builder.pos(x2, y2, z2).color(red, green, blue, alpha).endVertex();
+        builder.pos(x2, y2, z1).color(red, green, blue, alpha).endVertex();
+        builder.pos(x2, y2, z1).color(red, green, blue, alpha).endVertex();
+        builder.pos(x2, y1, z1).color(red, green, blue, alpha).endVertex();
+        builder.pos(x1, y2, z1).color(red, green, blue, alpha).endVertex();
+        builder.pos(x1, y1, z1).color(red, green, blue, alpha).endVertex();
+        builder.pos(x1, y1, z1).color(red, green, blue, alpha).endVertex();
+        builder.pos(x2, y1, z1).color(red, green, blue, alpha).endVertex();
+        builder.pos(x1, y1, z2).color(red, green, blue, alpha).endVertex();
+        builder.pos(x2, y1, z2).color(red, green, blue, alpha).endVertex();
+        builder.pos(x2, y1, z2).color(red, green, blue, alpha).endVertex();
+        builder.pos(x1, y2, z1).color(red, green, blue, alpha).endVertex();
+        builder.pos(x1, y2, z1).color(red, green, blue, alpha).endVertex();
+        builder.pos(x1, y2, z2).color(red, green, blue, alpha).endVertex();
+        builder.pos(x2, y2, z1).color(red, green, blue, alpha).endVertex();
+        builder.pos(x2, y2, z2).color(red, green, blue, alpha).endVertex();
+        builder.pos(x2, y2, z2).color(red, green, blue, alpha).endVertex();
+        builder.pos(x2, y2, z2).color(red, green, blue, alpha).endVertex();
+    }
+
+    public static void rfB(final double minX, final double minY, final double minZ, final double maxX, final double maxY, final double maxZ, final float red, final float green, final float blue, final float alpha) {
+        final Tessellator tessellator = Tessellator.getInstance();
+        final BufferBuilder bufferbuilder = tessellator.getBuffer();
+        bufferbuilder.begin(5, DefaultVertexFormats.POSITION_COLOR);
+        cfb(bufferbuilder, minX, minY, minZ, maxX, maxY, maxZ, red, green, blue, alpha);
+        tessellator.draw();
+    }
+
+    public static void rfB(final AxisAlignedBB aabb, final float red, final float green, final float blue, final float alpha) {
+        GL11.glPushMatrix();
+        GL11.glBlendFunc(770, 771);
+        GL11.glEnable(3042);
+        GL11.glLineWidth(2.0f);
+        GL11.glDisable(3553);
+        GL11.glDisable(2929);
+        GL11.glDepthMask(false);
+        rfB(aabb.minX, aabb.minY, aabb.minZ, aabb.maxX, aabb.maxY, aabb.maxZ, red, green, blue, alpha);
+        GlStateManager.resetColor();
+        GL11.glLineWidth(2.0f);
+        GL11.glEnable(3553);
+        GL11.glEnable(2929);
+        GL11.glDepthMask(true);
+        GL11.glDisable(3042);
+        GL11.glPopMatrix();
     }
 }

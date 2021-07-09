@@ -13,7 +13,16 @@ public class NoBob extends Feature {
         super("NoBob", Category.Visuals);
     }
 
+    @Override
+    public void onEnable() {
+        mc.gameSettings.viewBobbing = true;
+        super.onEnable();
+    }
+
     @EventTarget
     public void onUpdate(EventUpdate event) {
+        boolean old = mc.gameSettings.viewBobbing;
+        mc.gameSettings.viewBobbing = false;
+        mc.gameSettings.viewBobbing = old;
     }
 }

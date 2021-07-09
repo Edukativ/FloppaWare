@@ -11,7 +11,7 @@ import org.lwjgl.input.Keyboard;
 public class InventoryWalk
         extends Feature {
     public InventoryWalk() {
-        super("InvWalk", Category.Player);
+        super("GuiWalk", Category.Player);
     }
 
     @EventTarget
