@@ -78,4 +78,5 @@ public class Feature extends Configurable {
     public void setHidden(boolean hidden) {
         this.hidden = hidden;
     }
-}
+
+    }

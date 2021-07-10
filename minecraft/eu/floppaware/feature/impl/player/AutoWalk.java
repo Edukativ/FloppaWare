@@ -4,7 +4,6 @@ import eu.floppaware.event.EventTarget;
 import eu.floppaware.event.events.impl.player.EventUpdate;
 import eu.floppaware.feature.Category;
 import eu.floppaware.feature.Feature;
-import org.lwjgl.input.Keyboard;
 
 public class AutoWalk extends Feature {
 

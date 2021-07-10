@@ -1,6 +1,5 @@
 package eu.floppaware.feature.impl.combat;
 
-import eu.floppaware.Main;
 import eu.floppaware.event.EventTarget;
 import eu.floppaware.event.events.impl.player.EventUpdate;
 import eu.floppaware.feature.Category;

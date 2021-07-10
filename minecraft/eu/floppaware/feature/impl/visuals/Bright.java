@@ -5,9 +5,6 @@ import eu.floppaware.event.events.impl.player.EventUpdate;
 import eu.floppaware.feature.Category;
 import eu.floppaware.feature.Feature;
 import eu.floppaware.settings.impl.ListSetting;
-import eu.floppaware.utils.MoveUtils;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 

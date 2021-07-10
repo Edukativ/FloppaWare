@@ -2,8 +2,6 @@ package eu.floppaware.feature.impl.player;
 
 import eu.floppaware.feature.Category;
 import eu.floppaware.feature.Feature;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 
 public class NoPush extends Feature {
 

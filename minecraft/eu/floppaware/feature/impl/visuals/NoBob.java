@@ -1,7 +1,5 @@
 package eu.floppaware.feature.impl.visuals;
 
-import org.lwjgl.input.Keyboard;
-
 import eu.floppaware.event.EventTarget;
 import eu.floppaware.event.events.impl.player.EventUpdate;
 import eu.floppaware.feature.Category;

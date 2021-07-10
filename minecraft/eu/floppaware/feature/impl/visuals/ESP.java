@@ -1,13 +1,11 @@
 package eu.floppaware.feature.impl.visuals;
 
 import eu.floppaware.event.EventTarget;
-import eu.floppaware.event.events.impl.player.EventUpdate;
 import eu.floppaware.event.events.impl.render.EventRender3D;
 import eu.floppaware.feature.Category;
 import eu.floppaware.feature.Feature;
 import eu.floppaware.settings.impl.NumberSetting;
 import eu.floppaware.utils.render.RenderUtil;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.AxisAlignedBB;

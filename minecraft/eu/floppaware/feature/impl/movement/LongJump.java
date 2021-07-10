@@ -5,7 +5,6 @@ import eu.floppaware.event.events.impl.packet.EventSendPacket;
 import eu.floppaware.event.events.impl.player.EventUpdate;
 import eu.floppaware.feature.Category;
 import eu.floppaware.feature.Feature;
-import net.minecraft.client.Minecraft;
 
 public class LongJump
         extends Feature {
