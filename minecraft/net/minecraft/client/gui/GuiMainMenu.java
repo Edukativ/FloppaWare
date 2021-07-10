@@ -700,9 +700,9 @@ public class GuiMainMenu extends GuiScreen
             this.drawString(this.fontRendererObj, s, 2, this.height - 10, -1);
         }
 
-        this.drawString(this.fontRendererObj, "Welcome, Developer! Dev-BUILD: 0.1.5", this.field_193979_N, this.height - 10, -1);
+        this.drawString(this.fontRendererObj, "Welcome, Developer! Dev-Version —— 0.1.5", this.field_193979_N, this.height - 11, -1);
 
-        if (mouseX > this.field_193979_N && mouseX < this.field_193979_N + this.field_193978_M && mouseY > this.height - 10 && mouseY < this.height && Mouse.isInsideWindow())
+        if (mouseX > this.field_193979_N && mouseX < this.field_193979_N + this.field_193978_M && mouseY > this.height - 11 && mouseY < this.height && Mouse.isInsideWindow())
         {
             drawRect(this.field_193979_N, this.height - 1, this.field_193979_N + this.field_193978_M, this.height, -1);
         }
